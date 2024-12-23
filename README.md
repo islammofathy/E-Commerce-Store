@@ -27,7 +27,7 @@ A2Z is a online shop for everything you need! From electronics and fashion to ho
   # This is not all features we have. We are still looking for other features.
   # we already start in the project but we work in vs code and we will begin to upload it here after we finish the frontend
   # In Technology Integration we use
-       - frontend (undetermined yet)
+       - frontend (Angular)
        - backend  (node js)
        - data base (mongoDB)
-       - API (Postman)
+       - API 
