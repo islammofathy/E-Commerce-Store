@@ -20,6 +20,8 @@ A2Z is a online shop for everything you need! From electronics and fashion to ho
   ![image](https://github.com/user-attachments/assets/e1127ffd-d0ee-4f7f-ba62-ee408640e479)
   - order history
   ![image](https://github.com/user-attachments/assets/3ec005c1-3122-4178-831c-1ef7c770366c)
+  - Product details page with descriptions
+  ![image](https://github.com/user-attachments/assets/986e9eed-cdc6-45fe-9797-689f0de69850)
   # Technologies used to build the website:
    1. Angular
    2. node js
