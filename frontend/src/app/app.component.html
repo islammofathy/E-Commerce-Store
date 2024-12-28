@@ -1,6 +1,5 @@
 <header>
   <nav class="navbar">
-
     <!-- Logo Section -->
     <div class="logo">
       <a href="/" class="navbar-logo">A2Z Store</a>
@@ -13,8 +12,6 @@
       <li><a routerLink="/cart" routerLinkActive="active">Cart</a></li>
       <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
     </ul>
-
-
 
     <!-- Cart Section -->
     <div class="cart">
@@ -61,14 +58,26 @@
     <form (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
       <div class="form-group">
         <label for="username">Email</label>
-        <input type="email" id="username" name="username" [(ngModel)]="user.username" required
-          placeholder="Enter your email" />
+        <input 
+          type="email" 
+          id="username" 
+          name="username" 
+          [(ngModel)]="user.username" 
+          required
+          placeholder="Enter your email"
+        />
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" [(ngModel)]="user.password" required
-          placeholder="Enter your password" />
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          [(ngModel)]="user.password" 
+          required
+          placeholder="Enter your password"
+        />
       </div>
 
       <button type="submit" [disabled]="!loginForm.valid">Login</button>

@@ -75,24 +75,3 @@
     margin-top: 30px;
     font-weight: bold;
   }
-  /* src/app/cart/cart.component.css */
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .cart-item button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .cart-item button:hover {
-    background-color: #e60000;
-  }
-  
