@@ -1,0 +1,43 @@
+<div class="user-info" *ngIf="user">
+  <div class="user-avatar">
+    <img src="https://www.w3schools.com/w3images/avatar2.png" alt="User Avatar" class="avatar-img" />
+  </div>
+  <div class="user-details">
+    <h3>{{ user.name }}</h3>
+    <p>{{ user.email }}</p>
+  </div>
+</div>
+
+<div class="order-container">
+    <h2>Order List</h2>
+    
+    <!-- Loop through the orders -->
+    <div *ngFor="let order of orderList" class="order-card">
+      <!-- Order Header -->
+      <div class="order-header">
+        <div class="order-id">Order ID: {{ order._id }}</div>
+        <div class="order-status">Status: <span>{{ order.status }}</span></div>
+    </div>
+  
+      <!-- Order Details -->
+      <div class="order-details">
+        <div class="order-amount">Total Amount: ${{ order.totalAmount }}</div>
+        <div class="order-created">Created At: {{ order.createdAt | date:'short' }}</div>
+      </div>
+  
+      <!-- Product List -->
+      <div class="product-list">
+        <h3>Products:</h3>
+        <div *ngFor="let product of order.products" class="product-item">
+          <img [src]="product.avatar" alt="{{ product.name }}" class="product-avatar" />
+          <div class="product-info">
+            <p><strong>{{ product.name }}</strong></p>
+            <p>Size: {{ product.size }}</p>
+            <p>Price: ${{ product.price }}</p>
+            <p>Quantity: {{ product.quantity }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
