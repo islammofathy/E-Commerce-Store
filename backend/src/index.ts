@@ -3,7 +3,11 @@ import dotenv from 'dotenv';
 import { connectToDB } from './db';
 import { Product } from './models/products';
 import bodyParser from "body-parser";
+import cors from "cors";
 import { Users } from './models/users';
+import { createProduct, deleteProduct, getProduct, listProducts, updateProduct } from './controllers/product.controller';
+import { createUser, loginUser } from './controllers/user.controller';
+import { createOrder, getOrders } from './controllers/orders.controllers';
 
 //For env File 
 dotenv.config();
@@ -12,42 +16,41 @@ const app: Application = express();
 const port = process.env.PORT || 8000;
 
 app.use(bodyParser.json())
-
+app.use(cors())
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Welcome to Express & TypeScript Server');
 });
 
-app.get('/products', async (req: Request, res: Response) => {
-    const products = await Product.find()
-    res.send(products);
-});
 
-app.post('/products', async (req: Request, res: Response) => {
-    const body= req.body
-    const product = await Product.create(body)
-    res.send(product);
-});
-app.post('/users', async (req: Request, res: Response) => {
-    const body= req.body
-    const user = await Users.create(body)
-    res.send(user);
-});
+/**Product routes */
 
-app.put('/products/:id', async (req: Request, res: Response) => {
+app.get('/products', listProducts);
 
-    const productID=req.params.id
-    const product = await Product.findByIdAndUpdate(productID, req.body)
-    res.send(product);
-});
-app.delete('/products/:id', async (req: Request, res: Response) => {
+app.get('/products/:id', getProduct);
 
-    const productID=req.params.id
-    const product = await Product.findByIdAndDelete(productID)
-    res.send(product);
-});
+app.post('/products',createProduct);
+
+app.put('/products/:id', updateProduct);
+
+app.delete('/products/:id', deleteProduct);
+
+
+/**User routes */
+
+app.post('/users', createUser);
+
+app.post('/login', loginUser);
+
+
+/**Order routes */
+
+app.post('/orders', createOrder);
+
+app.get('/orders/:userId', getOrders);
+
 
 app.listen(port, () => {
-    console.log(`Server is Firing at http://localhost:${port}`);
+    console.log(`Server is firing at http://localhost:${port}`);
 });
 connectToDB() 
