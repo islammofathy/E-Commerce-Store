@@ -2,7 +2,12 @@ import { Request, Response } from 'express';
 import { Product } from "../models/products";
 
 export const listProducts = async (req: Request, res: Response) => {
-    const products = await Product.find()
+    const { search } = req.query; // Extract the search query parameter
+    const filter = search
+        ? { name: { $regex: search, $options: 'i' } } // Case-insensitive search by name
+        : {};
+
+    const products = await Product.find(filter);
     res.send(products);
 }
 

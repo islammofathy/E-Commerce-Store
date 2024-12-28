@@ -75,3 +75,23 @@
     margin-top: 30px;
     font-weight: bold;
   }
+  /* Remove Button */
+.remove-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .remove-button:hover {
+    background-color: #d9363e;
+  }
+  
+  .remove-button:active {
+    transform: scale(0.95);
+  }
+  

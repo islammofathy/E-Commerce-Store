@@ -16,8 +16,10 @@ export class ProductsService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
-  getProducts(): Observable<any> {
-    return this.http.get(apiUrl + "/products");
+  getProducts(search?: string): Observable<any> {
+    const params:{search?: string}={}
+    if (search) params["search"]=search
+    return this.http.get(apiUrl + "/products",{params});
   }
 
   getProductById(productId: string): Observable<any> {

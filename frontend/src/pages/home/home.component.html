@@ -1,3 +1,12 @@
+<div class="search-container">
+  <input
+    type="text"
+    placeholder="Search products..."
+    [(ngModel)]="searchQuery"
+    class="search-bar"
+  />
+  <button (click)="filterProducts()" class="search-button">Search</button>
+</div>
 <div class="product-container">
   <div class="product-card" [routerLink]="['/product', product._id]" *ngFor="let product of productList">
     <img [src]="product.avatar" alt="{{product.name}}" class="product-avatar" />

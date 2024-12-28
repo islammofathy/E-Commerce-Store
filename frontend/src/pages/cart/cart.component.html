@@ -1,6 +1,6 @@
 <div class="cart-container" *ngIf="cart.length > 0">
   <!-- Cart Items List -->
-  <div class="cart-item" *ngFor="let product of cart">
+  <div class="cart-item" *ngFor="let product of cart; let i = index">
     <div class="item-image">
       <img [src]="product.avatar" alt="{{ product.name }}" class="product-avatar" />
     </div>
@@ -10,6 +10,8 @@
       <p>Price: ${{ product.price }}</p>
       <p>Quantity: {{ product.quantity }}</p>
       <p>Total: ${{ product.price * product.quantity }}</p>
+      <!-- Remove from Cart Button -->
+      <button class="remove-button" (click)="removeFromCart(product._id)">Remove from Cart</button>
     </div>
   </div>
 
