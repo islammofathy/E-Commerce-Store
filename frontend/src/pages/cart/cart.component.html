@@ -1,0 +1,27 @@
+<div class="cart-container" *ngIf="cart.length > 0">
+  <!-- Cart Items List -->
+  <div class="cart-item" *ngFor="let product of cart">
+    <div class="item-image">
+      <img [src]="product.avatar" alt="{{ product.name }}" class="product-avatar" />
+    </div>
+    <div class="item-details">
+      <h3>{{ product.name }}</h3>
+      <p>Size: {{ product.size }}</p>
+      <p>Price: ${{ product.price }}</p>
+      <p>Quantity: {{ product.quantity }}</p>
+      <p>Total: ${{ product.price * product.quantity }}</p>
+    </div>
+  </div>
+
+  <!-- Total Price -->
+  <div class="total-price">
+    <h2>Total: ${{ totalPrice }}</h2>
+  </div>
+
+  <!-- Complete Order Button -->
+  <button class="complete-order-button" (click)="completeOrder()">Complete Order</button>
+</div>
+
+<div *ngIf="cart.length === 0" class="empty-cart-message">
+  <p>No products in your cart.</p>
+</div>

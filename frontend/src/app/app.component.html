@@ -1,0 +1,79 @@
+<header>
+  <nav class="navbar">
+
+    <!-- Logo Section -->
+    <div class="logo">
+      <a href="/" class="navbar-logo">A2Z Store</a>
+    </div>
+
+    <!-- Navigation Links Section -->
+    <ul class="nav-links">
+      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+      <li><a routerLink="/cart" routerLinkActive="active">Cart</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    </ul>
+
+
+
+    <!-- Cart Section -->
+    <div class="cart">
+      <span class="cart-icon">
+        <img src="https://img.icons8.com/ios/50/000000/shopping-cart.png" alt="cart icon" />
+        <span class="cart-count">{{totalQuantity}}</span>
+      </span>
+    </div>
+
+    <!-- Authentication Section -->
+    <div class="auth-links">
+      <a *ngIf="!isLoggedIn" (click)="openLoginModal()">Login</a>
+      <a *ngIf="isLoggedIn" (click)="logout()">Logout</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Links (Hidden by default) -->
+  <div *ngIf="menuOpen" class="mobile-nav">
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+      <li><a routerLink="/cart" routerLinkActive="active">Cart</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- The routed views render in the <router-outlet> -->
+<router-outlet></router-outlet>
+
+<!-- Modal for Login -->
+<div class="modal" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <span class="close" (click)="closeLoginModal()">&times;</span>
+    <h2>Login</h2>
+
+    <form (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="username">Email</label>
+        <input type="email" id="username" name="username" [(ngModel)]="user.username" required
+          placeholder="Enter your email" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="user.password" required
+          placeholder="Enter your password" />
+      </div>
+
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+
+    <p *ngIf="loginFailed" class="error-message">Invalid username or password</p>
+  </div>
+</div>

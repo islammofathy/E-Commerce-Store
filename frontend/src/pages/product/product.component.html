@@ -1,0 +1,35 @@
+<div class="product-detail-container" *ngIf="product; else loading">
+    <!-- Product Image -->
+    <img [src]="product.avatar" alt="{{ product.name }}" class="product-avatar" />
+  
+    <div class="product-info">
+      <!-- Product Name -->
+      <h2 class="product-name">{{ product.name }}</h2>
+  
+      <!-- Product Category -->
+      <p class="product-category">{{ product.category }}</p>
+  
+      <!-- Product Price -->
+      <span class="product-price">${{ product.price }}</span>
+  
+      <!-- Product Size -->
+      <p class="product-size">Size: {{ product.size }}</p>
+  
+      <!-- Product Quantity -->
+      <p class="product-quantity">Stock: {{ product.quantity }} available</p>
+  
+      <!-- Add to Cart Button -->
+      <button (click)="addToCart(product)" class="add-to-cart-button">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+  
+  <!-- Loading indicator (this is displayed when product is null) -->
+  <ng-template #loading>
+    <div class="loading-container">
+      <div class="spinner"></div>
+      <p>Loading product details...</p>
+    </div>
+  </ng-template>
+  

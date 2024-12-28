@@ -1,0 +1,143 @@
+/* User Info Section */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-avatar {
+    margin-right: 20px;
+}
+
+.avatar-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-details h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.user-details p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+
+/* Container for the whole orders list */
+.order-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Styling for individual order cards */
+.order-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for order cards */
+.order-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Order Header styles */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.order-id {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.order-status {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: green;
+    /* Always green */
+}
+
+.order-status span {
+    color: green;
+    /* Always green */
+}
+
+/* Order Details */
+.order-details {
+    margin-bottom: 15px;
+}
+
+.order-amount,
+.order-created {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Product List Section */
+.product-list {
+    margin-top: 20px;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+
+.product-avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.product-info {
+    flex-grow: 1;
+}
+
+.product-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.product-info p strong {
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-status {
+        margin-top: 10px;
+    }
+}
