@@ -1,5 +1,6 @@
 # A2Z Store
-A2Z is a online shop for everything you need! From electronics and fashion to home essentials and more, we bring you a wide range of products at unbeatable prices, delivered right to your door.
+A2Z is a online shop for everything you need! 
+From electronics and fashion to home essentials and more, we bring you a wide range of products at unbeatable prices, delivered right to your door.
 # Features
    1. Login With Email.
    2. Profile Dashboard
